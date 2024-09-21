@@ -12,18 +12,20 @@
     <h1 class="center" style="color: black;">
         Elastic Collisions
     </h1>
-    <div style="width: 80%; height: 85%!important; border:2px dashed #aaa0; margin-top: 2rem;">
+    <div class="container" style="width: 75%; height: 85%!important; border:2px dashed rgba(255, 255, 255, 0);">
         <canvas id="game-canvas" style="border:1px solid #000000;">
         </canvas>
+        <h2 id="displayGravity">Gravity: OFF</h2>
+    </div>
+    <div class="aboutBox">
+        <p><b>About:</b> This is a simulation of Elastic Collisions where you can see how balls interact with each other.</p>
+        <p><b>Tips:</b> Press, hold and drag the mouse to spawn a mass ball and control its velocity, be aware don't time travel if spawned many balls (it's heavy on the cpu).</p>
+        <ul>
+            <li>Press G to toggle the Gravity ON/OFF</li>
+            <li>Press R to reset the simulation and empty the chamber.</li>
+        </ul>
     </div>
 
 </body>
 <script src="main.js" defer></script>
-<script>
-    const width=window.innerWidth;
-    const height=window.innerHeight;
-    console.log("width: ",width)
-    console.log("height: ",height)
-</script>
-
 </html>

@@ -6,14 +6,45 @@
 
 body {
     background-image: url(background3.png);
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     
 }
 
-
 .center {
+    margin-top: 10px;
     text-align: center;
-} 
+}
+.container{
+    margin-bottom: 10px;
+}
+canvas{
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6) ;
+    margin-top: 0px;
+    transition: margin-top 0.5s ease ;
+}
+canvas:hover{
+    margin-top: -7px;
+    transition: margin-top 0.5s ease;
+}
+h2{
+    margin-top: -67vh;
+    margin-left:45%;
+}
+.aboutBox{
+    display: flex;
+    flex-direction: column;
+}
+p{
+    margin-bottom: 10px;
+}
+ul{
+    margin-left: 60px;
+}
+li{
+    margin-bottom: 5px;
+}

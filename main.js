@@ -378,12 +378,7 @@ function main() {
     document.addEventListener('mousedown', (e) => {
 
         const withinCanvasX = e.clientX >= rect1.left && e.clientX <= w-rect1.left;
-        const withinCanvasY = e.clientY >= rect1.top && e.clientY <= h-rect1.top/1.5;
-
-        console.log(withinCanvasX, withinCanvasY)
-        console.log(rect1.left, w-rect1.left)
-        console.log(rect1.top, h-rect1.top/2)
-        console.log(e.clientX, e.clientY)
+        const withinCanvasY = e.clientY >= rect1.top && e.clientY <= h-rect1.top*2;
 
         if(withinCanvasX && withinCanvasY){
 
@@ -405,15 +400,18 @@ function main() {
             currentY = e.clientY - rect.top;
         }
     })
+    const gravityElement = document.getElementById("displayGravity");
 
     document.addEventListener('keyup', (e) => {
-        switch (e.key){
-            case "r": state=[]; break;
-            case "g": if(gravity==0) {
+        if(e.key ==="r" || e.key==="R"){
+            state=[];
+        }else if (e.key ==="g" || e.key==="G"){
+            if(gravity==0) {
                 gravity = 0.009;
                 for(let i = 0 ; i<state.length; i++){
                     state[i].G = gravity;
                 }
+                gravityElement.innerText = "Gravity: ON";
 
             }else{
                 gravity=0;
@@ -421,13 +419,11 @@ function main() {
                     state[i].G = gravity;
                     state[i].vY = -1;
                 }
-
-            }; break;
-
+                gravityElement.innerText = "Gravity: OFF";
+            }
         }
     });
     
-
     // Run game
     window.requestAnimationFrame(gameLoop)
 }
